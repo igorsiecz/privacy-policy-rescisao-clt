@@ -66,18 +66,23 @@
     
     /* Badge não vira "bola" no mobile */
     .badge{
-      display:flex;                /* em vez de inline-flex */
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      width: fit-content;
+      display: grid;
+      gap: 6px;
+      width: 100%;
       max-width: 100%;
       padding: 10px 12px;
-      border-radius: 14px;         /* <- aqui é o segredo: não use 999px */
+      border-radius: 14px;
       border: 1px solid var(--line);
       background: rgba(0,0,0,.10);
       font-size: 13px;
       color: var(--muted);
+    }
+    
+    .badge-row{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap; /* se precisar quebrar, quebra mantendo dot+texto juntos */
     }
     
     /* coluna de pills */
@@ -106,26 +111,23 @@
     
     /* ===== Ajustes específicos para celular ===== */
     @media (max-width: 720px){
-      header{ padding: 26px 14px 12px; }
-    
       .hero{
-        flex-direction: column;    /* empilha tudo */
+        flex-direction: column;
+        justify-content: flex-start;  /* <- remove o “empurra pro fim” */
         padding: 18px 16px;
       }
     
       .kpi{
         width: 100%;
-        justify-content:flex-start; /* pills vão pra esquerda e ficam embaixo */
-        text-align:left;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 8px;
+        margin-top: 10px;            /* fica coladinho abaixo do callout */
       }
     
-      .badge{
-        width: 100%;               /* ocupa a largura toda, fica “limpo” */
-        justify-content:flex-start;
-      }
-    
-      .callout{
-        font-size: 14px;
+      .pill{
+        font-size: 11px;             /* menor */
+        padding: 5px 10px;           /* mais compacto */
       }
     }
     .dot{width:9px;height:9px;border-radius:50%;}
@@ -245,8 +247,15 @@
       <div class="hero">
         <div>
           <div class="badge">
-            <span class="dot a"></span> Documento público (GitHub Pages)
-            <span class="dot b"></span> Última atualização: <strong>09/01/2026</strong>
+            <div class="badge-row">
+              <span class="dot a"></span>
+              <span>Documento público (GitHub Pages)</span>
+            </div>
+          
+            <div class="badge-row">
+              <span class="dot b"></span>
+              <span>Última atualização: <strong>09/01/2026</strong></span>
+            </div>
           </div>
 
           <h1>Política de Privacidade</h1>
