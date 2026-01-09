@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Política de Privacidade do aplicativo Calculadora de Rescisão CLT (Brasil)." />
+  <title>Política de Privacidade — Calculadora de Rescisão CLT</title>
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.14);
+      --accent: #f0c56d;
+      --accent2:#3aa6ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1020px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f8ff;
+        --card: rgba(0,0,0,.04);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.62);
+        --line: rgba(0,0,0,.12);
+        --shadow: 0 18px 60px rgba(0,0,0,.10);
+      }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(58,166,255,.20), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(240,197,109,.22), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto;}
+    header{padding: 44px 18px 18px;}
+    .hero{
+      display:flex; gap:18px; align-items:flex-start; justify-content:space-between;
+      padding: 26px 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.10);
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap:wrap;
+    }
+    .dot{width:9px;height:9px;border-radius:50%;}
+    .dot.a{background: var(--accent2);}
+    .dot.b{background: var(--accent);}
+    h1{font-size: clamp(24px, 3vw, 36px); margin: 10px 0 6px;}
+    p{margin: 10px 0;}
+    .muted{color:var(--muted)}
+    .kpi{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;
+      color: var(--muted);
+      min-width: 200px;
+      text-align:right;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      font-size: 12px;
+    }
+    main{padding: 0 18px 56px;}
+    .grid{display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px;}
+    @media (min-width: 980px){ .grid{grid-template-columns: 300px 1fr;} }
+    .toc{
+      align-self: stretch;     /* faz a coluna esticar até o fim do conteúdo */
+      height: 100%;            /* ocupa toda a altura da célula do grid */
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .toc-inner{
+      position: sticky;
+      top: 14px;               /* mantém o conteúdo do sumário “fixo” enquanto rola */
+    }
+
+    .toc-inner strong{display:block; margin-bottom: 10px;}
+
+    .toc-inner a{
+      display:block;
+      text-decoration:none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    .toc-inner a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.05);
+    }
+
+    nav strong{display:block; margin-bottom: 10px;}
+    nav a{
+      display:block;
+      text-decoration:none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.05);
+    }
+    section{
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px 18px 10px;
+    }
+    section + section{margin-top:14px;}
+    h2{margin: 0 0 10px; font-size: 18px;}
+    h3{margin: 14px 0 8px; font-size: 15px;}
+    ul{margin: 8px 0 14px; padding-left: 18px;}
+    li{margin: 6px 0;}
+    code{
+      padding: .12em .36em;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.10);
+    }
+    .callout{
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--muted);
+      background: rgba(0,0,0,.06);
+      margin: 12px 0;
+    }
+    details{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin: 12px 0;
+    }
+    summary{cursor:pointer; font-weight:600; color: var(--text);}
+    footer{
+      padding: 24px 18px 42px;
+      color: var(--muted);
+    }
+    .small{font-size: 12px;}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="badge">
+            <span class="dot a"></span> Documento público (GitHub Pages)
+            <span class="dot b"></span> Última atualização: <strong>09/01/2026</strong>
+          </div>
+
+          <h1>Política de Privacidade</h1>
+
+          <p class="muted">
+            Aplicativo: <strong>Calculadora de Rescisão CLT</strong><br/>
+            Responsável (desenvolvedor): <strong>Igor Sieczkowski Moreira</strong>
+          </p>
+
+          <div class="callout">
+            <strong>Importante:</strong> este aplicativo é independente e <strong>não é afiliado</strong> a órgãos governamentais.
+            Os resultados são <strong>estimativas aproximadas</strong> e não substituem orientação contábil/jurídica.
+          </div>
+        </div>
+
+        <div class="kpi" aria-label="Marcadores">
+          <span class="pill">🇧🇷 pt-BR</span>
+          <span class="pill">⚖️ LGPD</span>
+          <span class="pill">📣 Anúncios (AdMob)</span>
+          <span class="pill">📱 Processamento local</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap grid">
+      <aside class="toc" aria-label="Sumário">
+        <div class="toc-inner">
+          <strong>Sumário</strong>
+          <a href="#visao-geral">1. Visão geral</a>
+          <a href="#funcionalidades">2. Funcionalidades</a>
+          <a href="#privacidade">3. Privacidade e segurança</a>
+          <a href="#terceiros">4. Terceiros e permissões</a>
+          <a href="#consideracoes">5. Considerações finais</a>
+          <a href="#contato">6. Contato</a>
+        </div>
+      </aside>
+
+      <div>
+        <section id="visao-geral">
+          <h2>1) Visão Geral do Aplicativo</h2>
+
+          <p>
+            A <strong>Calculadora de Rescisão CLT</strong> é um aplicativo voltado para trabalhadores no regime CLT
+            (Consolidação das Leis do Trabalho) no Brasil, permitindo simular de forma rápida e prática os valores
+            devidos em uma rescisão de contrato de trabalho.
+          </p>
+
+          <p>
+            O app foi desenvolvido como uma ferramenta educativa e acessível, fornecendo estimativas aproximadas de salários,
+            descontos legais (como INSS e IRRF) e demais verbas rescisórias com base nas diretrizes da legislação trabalhista
+            brasileira. Os cálculos servem como <strong>referência</strong> e <strong>não possuem valor legal</strong>.
+          </p>
+
+          <p>
+            Em uma rescisão típica, somam-se as verbas rescisórias (ex.: saldo de salário, férias proporcionais, 13º proporcional)
+            e, quando aplicável, adiciona-se a multa de 40% do FGTS. O aplicativo automatiza esses cálculos conforme o tipo de
+            desligamento selecionado (demissão sem justa causa, com justa causa, pedido de demissão, acordo, etc.).
+          </p>
+
+          <p class="muted">
+            Por ser direcionado ao contexto brasileiro, o app está em português e é destinado principalmente a usuários no Brasil.
+          </p>
+        </section>
+
+        <section id="funcionalidades">
+          <h2>2) Funcionalidades Principais</h2>
+
+          <ul>
+            <li>
+              <strong>Cálculo completo de verbas rescisórias:</strong> considera diferentes tipos de rescisão e itens como
+              saldo de salário, férias vencidas/proporcionais (+1/3), 13º proporcional, aviso prévio (quando aplicável),
+              FGTS e multa de 40% quando devida, além de descontos obrigatórios (INSS e IRRF), apresentando o resultado de forma detalhada.
+            </li>
+            <li>
+              <strong>Resultados instantâneos e interface intuitiva:</strong> basta informar os dados solicitados (salário, datas,
+              motivo da saída, etc.) para obter o cálculo de forma imediata.
+            </li>
+            <li>
+              <strong>Histórico e exportação/compartilhamento:</strong> o app permite salvar cálculos localmente no dispositivo e
+              compartilhar/exportar resultados (por exemplo, via WhatsApp ou e-mail). O conteúdo pode conter os dados de entrada e os valores calculados,
+              em formato de fácil leitura (ex.: texto e/ou arquivo gerado pelo próprio dispositivo).
+            </li>
+          </ul>
+
+          <details>
+            <summary>Nota sobre precisão e uso responsável</summary>
+            <p class="muted">
+              Os resultados dependem das informações inseridas pelo usuário e das tabelas de referência vigentes.
+              Em caso de divergência, prevalecem as fontes oficiais e a orientação profissional especializada.
+            </p>
+          </details>
+        </section>
+
+        <section id="privacidade">
+          <h2>3) Privacidade e Segurança de Dados</h2>
+
+          <p>
+            A <strong>Calculadora de Rescisão CLT</strong> foi projetada com foco na privacidade do usuário.
+            O desenvolvedor <strong>não solicita cadastro</strong> e o app pode operar sem login.
+          </p>
+
+          <h3>3.1 Processamento local</h3>
+          <p>
+            As simulações e cálculos são executados <strong>localmente no dispositivo</strong>. Em condições normais de uso,
+            os valores inseridos (como salários, datas e adicionais) <strong>não são enviados</strong> para servidores do desenvolvedor.
+          </p>
+
+          <h3>3.2 Compartilhamento/exportação sob controle do usuário</h3>
+          <p>
+            Quando o usuário opta por exportar ou compartilhar um resultado, essa ação é feita <strong>manualmente</strong> pelo próprio usuário.
+            O app gera o conteúdo (ex.: texto/arquivo) e o usuário decide se deseja salvar localmente ou enviar a terceiros.
+            O desenvolvedor não recebe automaticamente o conteúdo desses compartilhamentos.
+          </p>
+
+          <h3>3.3 Retenção e remoção</h3>
+          <p>
+            Se o app mantiver histórico local, o usuário pode remover dados apagando o histórico dentro do app (quando disponível) ou
+            limpando os dados do aplicativo nas configurações do Android. Como regra, não há cópia externa mantida pelo desenvolvedor.
+          </p>
+
+          <details>
+            <summary>Sobre conexão com a internet</summary>
+            <p class="muted">
+              A conexão de rede pode ser usada para: (a) carregar anúncios e (b) buscar referências públicas (ex.: tabelas de INSS/IRPF)
+              quando o app oferecer essa atualização. Isso não significa que os dados inseridos nos cálculos sejam transmitidos ao desenvolvedor.
+            </p>
+          </details>
+        </section>
+
+        <section id="terceiros">
+          <h2>4) Tecnologias de Terceiros e Permissões</h2>
+
+          <h3>4.1 Google AdMob (anúncios)</h3>
+          <p>
+            O aplicativo utiliza o <strong>Google AdMob</strong> para exibir anúncios (incluindo formatos como interstitial e rewarded).
+            Para viabilizar publicidade, o SDK do Google pode coletar e processar informações do dispositivo e do uso do app
+            (por exemplo, identificadores e sinais relacionados a anúncios), de acordo com as políticas do Google.
+          </p>
+          <p class="muted">
+            O desenvolvedor não tem acesso aos dados brutos coletados pelo provedor de anúncios além do que é apresentado nas ferramentas
+            padrão de monetização (relatórios agregados).
+          </p>
+
+          <h3>4.2 Permissões solicitadas</h3>
+          <ul>
+            <li>
+              <strong>Acesso à Internet:</strong> necessário para carregar anúncios e, quando aplicável, obter referências públicas
+              para manter tabelas/valores atualizados (ex.: INSS e IRPF) a partir de fontes oficiais.
+            </li>
+            <li>
+              <strong>Armazenamento/arquivos (quando aplicável):</strong> pode ser utilizado para salvar histórico local e viabilizar exportação
+              de resultados (ex.: geração de arquivo no dispositivo) para que o usuário possa guardar ou compartilhar.
+            </li>
+          </ul>
+
+          <p class="muted">
+            O app não solicita permissões sensíveis desnecessárias (ex.: câmera, contatos, localização precisa), reforçando uma abordagem minimalista.
+          </p>
+        </section>
+
+        <section id="consideracoes">
+          <h2>5) Considerações Finais</h2>
+
+          <p>
+            A <strong>Calculadora de Rescisão CLT</strong> é uma ferramenta prática para estimar valores de rescisão trabalhista com base na legislação
+            brasileira e referências públicas. Ao mesmo tempo, adota uma postura de privacidade ao manter os dados sob controle do usuário no dispositivo.
+          </p>
+
+          <p>
+            Em caso de dúvidas sobre resultados, recomenda-se consultar fontes oficiais e/ou um profissional (contador ou advogado trabalhista),
+            já que os valores fornecidos são <strong>estimativas</strong> e não têm validade legal.
+          </p>
+
+          <details>
+            <summary>Uso por menores</summary>
+            <p class="muted">
+              Este aplicativo não é direcionado a crianças. Se você é responsável legal e acredita que um menor utilizou o app de forma inadequada,
+              entre em contato para orientações.
+            </p>
+          </details>
+        </section>
+
+        <section id="contato">
+          <h2>6) Contato</h2>
+          <p>
+            Para dúvidas, solicitações ou informações relacionadas a esta Política de Privacidade:
+          </p>
+
+          <ul>
+            <li><strong>Responsável:</strong> Igor Sieczkowski Moreira</li>
+            <li><strong>E-mail:</strong> <a href="mailto:SEU_EMAIL_AQUI">igorsiecz@hotmail.com</a></li>
+          </ul>
+        </section>
+
+        <p class="small muted" style="margin-top:12px;">
+          © <span id="y"></span> Igor Sieczkowski Moreira — Política de Privacidade do aplicativo.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap small">
+      <div class="muted">
+        Se você estiver hospedando este documento no GitHub Pages, o link público pode ser usado no campo de “Política de Privacidade”
+        da Google Play.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
