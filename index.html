@@ -87,47 +87,56 @@
     
     /* coluna de pills */
     .kpi{
-      flex: 0 1 260px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       justify-content:flex-end;
       text-align:right;
       color: var(--muted);
+      flex: 0 1 260px;
     }
     
-    /* pills mais compactos no mobile */
     .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,.04);
       font-size: 12px;
+      line-height: 1;
       white-space: nowrap;
+      flex: 0 0 auto;     /* <- impede crescer */
+      width: auto;        /* <- impede ocupar a linha inteira */
+      min-width: 0;
     }
     
     /* ===== Ajustes específicos para celular ===== */
     @media (max-width: 720px){
       .hero{
         flex-direction: column;
-        justify-content: flex-start;  /* <- remove o “empurra pro fim” */
-        padding: 18px 16px;
+        justify-content: flex-start; /* evita empurrar tags pro “fim” */
       }
     
+      /* Tags em 2 colunas, compactas, logo abaixo do bloco da esquerda */
       .kpi{
         width: 100%;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        justify-content: start;
         text-align: left;
-        gap: 8px;
-        margin-top: 10px;            /* fica coladinho abaixo do callout */
+        margin-top: 12px;
       }
     
       .pill{
-        font-size: 11px;             /* menor */
-        padding: 5px 10px;           /* mais compacto */
+        width: 100%;              /* cada tag ocupa a célula do grid */
+        justify-content: center;  /* centraliza ícone+texto */
+        padding: 10px 10px;
+        border-radius: 14px;      /* <- evita virar “bolha gigante” */
+        font-size: 11px;
+        white-space: nowrap;
       }
     }
     .dot{width:9px;height:9px;border-radius:50%;}
