@@ -263,7 +263,7 @@
   
             <div class="badge-row">
               <span class="dot b"></span>
-              <span>Última atualização: <strong>09/01/2026</strong></span>
+              <span>Última atualização: <strong>22/07/2026</strong></span>
             </div>
           </div>
   
@@ -284,6 +284,7 @@
             <span class="pill">🇧🇷 pt-BR</span>
             <span class="pill">⚖️ LGPD</span>
             <span class="pill">📣 Anúncios (AdMob)</span>
+            <span class="pill">📊 Estatísticas (Firebase)</span>
             <span class="pill">📱 Processamento local</span>
           </div>
         </div>
@@ -366,33 +367,57 @@
 
           <p>
             A <strong>Calculadora de Rescisão CLT</strong> foi projetada com foco na privacidade do usuário.
-            O desenvolvedor <strong>não solicita cadastro</strong> e o app pode operar sem login.
+            O desenvolvedor <strong>não solicita cadastro</strong> e o app pode operar sem login. Alguns dados técnicos de uso,
+            publicidade e diagnóstico são, contudo, coletados pelos serviços Google descritos nesta política.
           </p>
 
           <h3>3.1 Processamento local</h3>
           <p>
             As simulações e cálculos são executados <strong>localmente no dispositivo</strong>. Em condições normais de uso,
-            os valores inseridos (como salários, datas e adicionais) <strong>não são enviados</strong> para servidores do desenvolvedor.
+            os valores inseridos — como salário, datas, motivo da rescisão, dependentes e adicionais — <strong>não são enviados</strong>
+            ao Firebase Analytics, ao AdMob nem a servidores próprios do desenvolvedor.
           </p>
 
-          <h3>3.2 Compartilhamento/exportação sob controle do usuário</h3>
+          <h3>3.2 Dados técnicos coletados fora do dispositivo</h3>
+          <p>
+            Para produzir estatísticas agregadas e exibir anúncios, os SDKs Google podem transmitir informações técnicas,
+            como identificadores da instalação e do dispositivo, endereço IP mascarado, localização aproximada inferida do IP,
+            eventos de abertura e visualização de telas, interações com o app e dados de diagnóstico. O app
+            <strong>não solicita acesso à localização GPS</strong> e não coleta localização precisa.
+          </p>
+
+          <h3>3.3 Compartilhamento/exportação sob controle do usuário</h3>
           <p>
             Quando o usuário opta por exportar ou compartilhar um resultado, essa ação é feita <strong>manualmente</strong> pelo próprio usuário.
             O app gera o conteúdo (ex.: texto/arquivo) e o usuário decide se deseja salvar localmente ou enviar a terceiros.
             O desenvolvedor não recebe automaticamente o conteúdo desses compartilhamentos.
           </p>
 
-          <h3>3.3 Retenção e remoção</h3>
+          <h3>3.4 Retenção, controles e remoção</h3>
           <p>
             Se o app mantiver histórico local, o usuário pode remover dados apagando o histórico dentro do app (quando disponível) ou
-            limpando os dados do aplicativo nas configurações do Android. Como regra, não há cópia externa mantida pelo desenvolvedor.
+            limpando os dados do aplicativo nas configurações do Android. Limpar os dados ou desinstalar o app redefine os identificadores
+            locais da instalação; o identificador de publicidade também pode ser redefinido ou excluído nas configurações de privacidade do Android.
+          </p>
+          <p>
+            Os dados processados pelo Google são mantidos conforme as configurações de retenção do projeto e as políticas dos respectivos serviços.
+            Como os relatórios recebidos pelo desenvolvedor são agregados ou pseudonimizados e não há conta de usuário no app, pode não ser possível
+            relacionar uma solicitação a registros analíticos específicos. Ainda assim, solicitações sobre acesso, correção, oposição ou exclusão podem
+            ser enviadas ao contato indicado nesta política.
+          </p>
+
+          <h3>3.5 Direitos do titular</h3>
+          <p>
+            Nos termos da Lei Geral de Proteção de Dados (LGPD), o usuário pode solicitar informações sobre o tratamento de seus dados,
+            correção, oposição, anonimização ou exclusão, quando aplicável. O desenvolvedor poderá pedir informações razoáveis para confirmar
+            a legitimidade da solicitação e responderá pelo e-mail indicado na seção de contato.
           </p>
 
           <details>
             <summary>Sobre conexão com a internet</summary>
             <p class="muted">
-              A conexão de rede pode ser usada para: (a) carregar anúncios e (b) buscar referências públicas (ex.: tabelas de INSS/IRPF)
-              quando o app oferecer essa atualização. Isso não significa que os dados inseridos nos cálculos sejam transmitidos ao desenvolvedor.
+              A conexão de rede é usada para carregar anúncios, medir o uso do aplicativo e enviar os dados técnicos descritos nesta política.
+              Isso não significa que os valores informados nas simulações sejam transmitidos.
             </p>
           </details>
         </section>
@@ -400,31 +425,58 @@
         <section id="terceiros">
           <h2>4) Tecnologias de Terceiros e Permissões</h2>
 
-          <h3>4.1 Google AdMob (anúncios)</h3>
+          <h3>4.1 Google Analytics para Firebase</h3>
+          <p>
+            O aplicativo utiliza o <strong>Google Analytics para Firebase</strong> para compreender, de forma agregada, como o app é utilizado
+            e em quais cidades, estados ou regiões há usuários. A localização regional é aproximada e derivada pelo Google de endereço IP mascarado;
+            o aplicativo não acessa o GPS para essa finalidade.
+          </p>
+          <p>
+            Por padrão, o serviço pode coletar um identificador da instância do app, o identificador de publicidade do Android quando disponível,
+            localização aproximada derivada do IP, sessões, aberturas e visualizações de tela. Nesta versão, o desenvolvedor não define um ID de usuário
+            e não envia salários, datas ou outros campos das simulações como eventos ou propriedades do Analytics.
+          </p>
+
+          <h3>4.2 Google AdMob (anúncios)</h3>
           <p>
             O aplicativo utiliza o <strong>Google AdMob</strong> para exibir anúncios (incluindo formatos como interstitial e rewarded).
-            Para viabilizar publicidade, o SDK do Google pode coletar e processar informações do dispositivo e do uso do app
-            (por exemplo, identificadores e sinais relacionados a anúncios), de acordo com as políticas do Google.
+            O SDK pode coletar e compartilhar endereço IP — utilizado para estimar a localização geral —, interações com o produto
+            (como inicialização, toques e visualizações de vídeo), informações de diagnóstico e identificadores do dispositivo ou da conta,
+            incluindo o identificador de publicidade e o App Set ID. Esses dados são usados para publicidade, análises e prevenção a fraudes.
           </p>
           <p class="muted">
             O desenvolvedor não tem acesso aos dados brutos coletados pelo provedor de anúncios além do que é apresentado nas ferramentas
             padrão de monetização (relatórios agregados).
           </p>
 
-          <h3>4.2 Permissões solicitadas</h3>
+          <h3>4.3 Permissões e identificadores</h3>
           <ul>
             <li>
-              <strong>Acesso à Internet:</strong> necessário para carregar anúncios e, quando aplicável, obter referências públicas
-              para manter tabelas/valores atualizados (ex.: INSS e IRPF) a partir de fontes oficiais.
+              <strong>Internet e estado da rede:</strong> necessários para carregar anúncios e operar os serviços de estatísticas.
             </li>
             <li>
-              <strong>Armazenamento/arquivos (quando aplicável):</strong> pode ser utilizado para salvar histórico local e viabilizar exportação
-              de resultados (ex.: geração de arquivo no dispositivo) para que o usuário possa guardar ou compartilhar.
+              <strong>Arquivos em versões antigas do Android:</strong> a permissão de gravação é limitada ao Android 9 ou anterior e pode ser usada
+              para exportar resultados. Nas versões atuais, o compartilhamento utiliza mecanismos protegidos do sistema.
+            </li>
+            <li>
+              <strong>Identificador de publicidade e serviços de anúncios:</strong> permissões incluídas pelo SDK do Google podem permitir medição,
+              personalização quando aplicável e prevenção a fraudes. O usuário pode gerenciar o identificador e escolhas de anúncios nas configurações
+              do Android e nas opções disponibilizadas pelo Google.
             </li>
           </ul>
 
           <p class="muted">
-            O app não solicita permissões sensíveis desnecessárias (ex.: câmera, contatos, localização precisa), reforçando uma abordagem minimalista.
+            O app não solicita câmera, contatos nem permissões de localização aproximada ou precisa. Todos os dados transmitidos pelos SDKs Google
+            são protegidos em trânsito por TLS. Consulte também a
+            <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>
+            e a página sobre
+            <a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" target="_blank" rel="noopener noreferrer">como o Google usa dados de apps parceiros</a>.
+          </p>
+
+          <h3>4.4 Processamento pelo Google</h3>
+          <p>
+            Os serviços Google podem processar dados em infraestrutura localizada fora do Brasil. Nesses casos, o tratamento e eventuais
+            transferências internacionais seguem os termos, medidas de segurança e mecanismos contratuais adotados pelo Google para seus serviços.
           </p>
         </section>
 
@@ -433,7 +485,8 @@
 
           <p>
             A <strong>Calculadora de Rescisão CLT</strong> é uma ferramenta prática para estimar valores de rescisão trabalhista com base na legislação
-            brasileira e referências públicas. Ao mesmo tempo, adota uma postura de privacidade ao manter os dados sob controle do usuário no dispositivo.
+            brasileira e referências públicas. Os dados informados nas simulações permanecem no dispositivo, enquanto os dados técnicos descritos nesta
+            política podem ser tratados pelos serviços Google para estatísticas, publicidade e segurança.
           </p>
 
           <p>
@@ -448,6 +501,11 @@
               entre em contato para orientações.
             </p>
           </details>
+
+          <p class="muted">
+            Esta política poderá ser atualizada para refletir mudanças no aplicativo, nos serviços utilizados ou nas obrigações legais.
+            A data da versão vigente é exibida no início deste documento.
+          </p>
         </section>
 
         <section id="contato">
@@ -458,7 +516,7 @@
 
           <ul>
             <li><strong>Responsável:</strong> Igor Sieczkowski Moreira</li>
-            <li><strong>E-mail:</strong> <a href="mailto:SEU_EMAIL_AQUI">igorsiecz@hotmail.com</a></li>
+            <li><strong>E-mail:</strong> <a href="mailto:igorsiecz@hotmail.com">igorsiecz@hotmail.com</a></li>
           </ul>
         </section>
 
@@ -473,4 +531,3 @@
   </script>
 </body>
 </html>
-
