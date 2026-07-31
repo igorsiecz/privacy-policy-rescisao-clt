@@ -263,7 +263,7 @@
   
             <div class="badge-row">
               <span class="dot b"></span>
-              <span>Última atualização: <strong>22/07/2026</strong></span>
+              <span>Última atualização: <strong>31/07/2026</strong></span>
             </div>
           </div>
   
@@ -285,6 +285,7 @@
             <span class="pill">⚖️ LGPD</span>
             <span class="pill">📣 Anúncios (AdMob)</span>
             <span class="pill">📊 Estatísticas (Firebase)</span>
+            <span class="pill">🛡️ Diagnósticos (Crashlytics)</span>
             <span class="pill">📱 Processamento local</span>
           </div>
         </div>
@@ -378,22 +379,61 @@
             ao Firebase Analytics, ao AdMob nem a servidores próprios do desenvolvedor.
           </p>
 
-          <h3>3.2 Dados técnicos coletados fora do dispositivo</h3>
+          <h3>3.2 Dados técnicos tratados fora do dispositivo</h3>
           <p>
-            Para produzir estatísticas agregadas e exibir anúncios, os SDKs Google podem transmitir informações técnicas,
-            como identificadores da instalação e do dispositivo, endereço IP mascarado, localização aproximada inferida do IP,
-            eventos de abertura e visualização de telas, interações com o app e dados de diagnóstico. O app
-            <strong>não solicita acesso à localização GPS</strong> e não coleta localização precisa.
+            Para produzir estatísticas agregadas, medir anúncios e diagnosticar falhas, os SDKs Google podem tratar informações
+            como identificadores da instalação e do dispositivo, identificador de publicidade do Android quando disponível,
+            endereço IP, localização aproximada inferida do IP, modelo e versão do dispositivo, versão do app, sessões,
+            eventos de navegação e uso, interações com anúncios, dados de receita publicitária e informações técnicas de
+            falhas ou travamentos. O endereço IP não é exibido ao desenvolvedor nos relatórios.
+          </p>
+          <p>
+            O aplicativo <strong>não solicita acesso ao GPS</strong>, não coleta localização precisa e não envia ao Analytics,
+            ao Crashlytics ou ao AdMob os valores ou textos informados na calculadora.
           </p>
 
-          <h3>3.3 Compartilhamento/exportação sob controle do usuário</h3>
+          <h3>3.3 Indicadores do Google, dados demográficos e interesses</h3>
+          <p>
+            A propriedade do Google Analytics utiliza os <strong>Indicadores do Google (Google signals)</strong>. Para usuários
+            elegíveis que tenham feito login em uma Conta Google, habilitado a personalização de anúncios e concedido os
+            consentimentos aplicáveis, o Google pode associar dados de uso a informações da conta para produzir relatórios
+            agregados sobre faixa etária, gênero, interesses e uso entre dispositivos.
+          </p>
+          <p>
+            O desenvolvedor recebe apenas relatórios agregados e sujeitos a limites mínimos de dados definidos pelo Google,
+            não tendo acesso à identidade, ao e-mail ou à Conta Google de cada usuário. Algumas pessoas poderão aparecer como
+            “desconhecido” ou não ser incluídas nesses relatórios.
+          </p>
+
+          <h3>3.4 User-ID e dados fornecidos pelo usuário</h3>
+          <p>
+            Embora a propriedade do Analytics tenha recursos administrativos de User-ID e coleta de dados fornecidos pelo
+            usuário habilitados, a versão atual do aplicativo <strong>não implementa login</strong>, não atribui um User-ID
+            definido pelo desenvolvedor e não envia ao Google e-mails, telefones, nomes ou outros dados fornecidos pelo usuário
+            para identificação ou correspondência. A ativação desses recursos no painel, por si só, não altera essa prática.
+          </p>
+
+          <h3>3.5 Compartilhamento/exportação sob controle do usuário</h3>
           <p>
             Quando o usuário opta por exportar ou compartilhar um resultado, essa ação é feita <strong>manualmente</strong> pelo próprio usuário.
             O app gera o conteúdo (ex.: texto/arquivo) e o usuário decide se deseja salvar localmente ou enviar a terceiros.
             O desenvolvedor não recebe automaticamente o conteúdo desses compartilhamentos.
           </p>
 
-          <h3>3.4 Retenção, controles e remoção</h3>
+          <h3>3.6 Finalidades, bases legais e escolhas</h3>
+          <p>
+            Os dados técnicos são utilizados para medir o uso e a estabilidade do app, corrigir falhas, prevenir fraude,
+            exibir e medir anúncios e melhorar funcionalidades. Conforme a finalidade e a legislação aplicável, o tratamento
+            poderá se basear no consentimento do usuário, no legítimo interesse em manter a segurança e a qualidade do serviço
+            ou no cumprimento de obrigações legais. A personalização de anúncios e a associação por Indicadores do Google
+            dependem das escolhas e dos consentimentos aplicáveis do usuário.
+          </p>
+          <p>
+            As escolhas relacionadas a anúncios e ao identificador de publicidade podem ser gerenciadas nas configurações de
+            privacidade do Android e da Conta Google.
+          </p>
+
+          <h3>3.7 Retenção, controles e remoção</h3>
           <p>
             Se o app mantiver histórico local, o usuário pode remover dados apagando o histórico dentro do app (quando disponível) ou
             limpando os dados do aplicativo nas configurações do Android. Limpar os dados ou desinstalar o app redefine os identificadores
@@ -406,7 +446,7 @@
             ser enviadas ao contato indicado nesta política.
           </p>
 
-          <h3>3.5 Direitos do titular</h3>
+          <h3>3.8 Direitos do titular</h3>
           <p>
             Nos termos da Lei Geral de Proteção de Dados (LGPD), o usuário pode solicitar informações sobre o tratamento de seus dados,
             correção, oposição, anonimização ou exclusão, quando aplicável. O desenvolvedor poderá pedir informações razoáveis para confirmar
@@ -432,24 +472,45 @@
             o aplicativo não acessa o GPS para essa finalidade.
           </p>
           <p>
-            Por padrão, o serviço pode coletar um identificador da instância do app, o identificador de publicidade do Android quando disponível,
-            localização aproximada derivada do IP, sessões, aberturas e visualizações de tela. Nesta versão, o desenvolvedor não define um ID de usuário
-            e não envia salários, datas ou outros campos das simulações como eventos ou propriedades do Analytics.
+            O serviço pode coletar identificadores da instalação e do dispositivo, identificador de publicidade quando
+            disponível, dados técnicos do app e do aparelho, sessões, aberturas, visualizações de telas e eventos de interação.
+            O aplicativo registra marcos anônimos, como início, conclusão ou falha do cálculo, solicitação e conclusão de
+            exportação, compartilhamento e estados técnicos de anúncios. Esses eventos <strong>não incluem salários, datas,
+            valores calculados, motivo da rescisão ou textos digitados</strong>.
+          </p>
+          <p>
+            Como o Analytics está vinculado ao AdMob, dados de impressões, formato, desempenho e receita publicitária podem
+            aparecer nos relatórios integrados. Os Indicadores do Google também podem enriquecer relatórios agregados com
+            dados demográficos e interesses nas condições descritas na seção 3.3.
           </p>
 
-          <h3>4.2 Google AdMob (anúncios)</h3>
+          <h3>4.2 Firebase Crashlytics</h3>
+          <p>
+            O aplicativo utiliza o <strong>Firebase Crashlytics</strong> para identificar falhas, exceções e situações em que
+            o app deixa de responder (ANRs). O serviço pode coletar rastreamentos de pilha, estado relevante do aplicativo no
+            momento da falha, metadados do dispositivo e do app, identificador de instalação do Crashlytics e registros técnicos
+            de ações ocorridas antes do problema.
+          </p>
+          <p>
+            Os registros personalizados enviados pelo app são limitados a contexto técnico, como tela atual, versão, ambiente,
+            tamanho de página de memória e estado de carregamento de anúncios. O desenvolvedor não anexa aos relatórios do
+            Crashlytics os valores informados nas simulações nem um identificador pessoal do usuário.
+          </p>
+
+          <h3>4.3 Google AdMob (anúncios)</h3>
           <p>
             O aplicativo utiliza o <strong>Google AdMob</strong> para exibir anúncios (incluindo formatos como interstitial e rewarded).
             O SDK pode coletar e compartilhar endereço IP — utilizado para estimar a localização geral —, interações com o produto
             (como inicialização, toques e visualizações de vídeo), informações de diagnóstico e identificadores do dispositivo ou da conta,
             incluindo o identificador de publicidade e o App Set ID. Esses dados são usados para publicidade, análises e prevenção a fraudes.
           </p>
-          <p class="muted">
-            O desenvolvedor não tem acesso aos dados brutos coletados pelo provedor de anúncios além do que é apresentado nas ferramentas
-            padrão de monetização (relatórios agregados).
+          <p>
+            Anúncios personalizados ou não personalizados poderão ser exibidos de acordo com a região, as configurações da
+            Conta Google, as escolhas de privacidade e os consentimentos aplicáveis. O desenvolvedor acessa relatórios de
+            monetização agregados, e não o histórico individual de anúncios de cada pessoa.
           </p>
 
-          <h3>4.3 Permissões e identificadores</h3>
+          <h3>4.4 Permissões e identificadores</h3>
           <ul>
             <li>
               <strong>Internet e estado da rede:</strong> necessários para carregar anúncios e operar os serviços de estatísticas.
@@ -473,10 +534,12 @@
             <a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" target="_blank" rel="noopener noreferrer">como o Google usa dados de apps parceiros</a>.
           </p>
 
-          <h3>4.4 Processamento pelo Google</h3>
+          <h3>4.5 Processamento pelo Google e vinculação dos serviços</h3>
           <p>
-            Os serviços Google podem processar dados em infraestrutura localizada fora do Brasil. Nesses casos, o tratamento e eventuais
-            transferências internacionais seguem os termos, medidas de segurança e mecanismos contratuais adotados pelo Google para seus serviços.
+            Os serviços Google podem processar dados em infraestrutura localizada fora do Brasil. A vinculação entre Analytics e
+            AdMob permite o fluxo de dados necessário aos relatórios de uso e monetização. Nesses casos, o tratamento e eventuais
+            transferências internacionais seguem os termos, medidas de segurança e mecanismos contratuais adotados pelo Google.
+            O desenvolvedor não vende os dados pessoais dos usuários.
           </p>
         </section>
 
@@ -486,7 +549,7 @@
           <p>
             A <strong>Calculadora de Rescisão CLT</strong> é uma ferramenta prática para estimar valores de rescisão trabalhista com base na legislação
             brasileira e referências públicas. Os dados informados nas simulações permanecem no dispositivo, enquanto os dados técnicos descritos nesta
-            política podem ser tratados pelos serviços Google para estatísticas, publicidade e segurança.
+            política podem ser tratados pelos serviços Google para estatísticas, publicidade, diagnóstico e segurança.
           </p>
 
           <p>
